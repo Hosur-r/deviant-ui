@@ -23,7 +23,7 @@ function App() {
   }, [])
 
   const req = async() => {
-    await axios.get(`https://deviant-girls.online/girls/yami-yoki${searchParams.get('app') !== null ? "?app=" : ""}`)
+    await axios.get(`https://deviant-girls.online/girls/yami-yoki${searchParams.get('app') !== null ? `?app=${searchParams.get('app')}` : ""}`)
     .then((res) => {
       setGirl(res.data)
         if(res.status === 200){
